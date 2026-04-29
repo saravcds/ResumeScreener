@@ -2,6 +2,7 @@ import sys
 import streamlit as st
 import pdfplumber
 from Resume_scanner import compare
+from PIL import Image
 
 
 def extract_pdf_data(file_path):
@@ -48,6 +49,8 @@ tab1, tab2 = st.tabs(["**Home**", "**Results**"])
 
 # Tab Home
 with tab1:
+    logo = Image.open("CDSlogo.png")
+    st.image(logo, width=200)
     st.title("Applicant Tracking System")
     uploaded_files = st.file_uploader(
         '**Choose your resume.pdf file:** ', type="pdf", accept_multiple_files=True)

@@ -34,10 +34,8 @@ def keyword_check(resume_text, keywords):
 st.set_page_config(page_title="Applicant Tracking System", layout="wide")
 
 # Add the logo and description to the sidebar
-logo_url = "https://raw.githubusercontent.com/ashokrajk21/ResumeScreener/refs/heads/main/RSSlogoOld.png"
-logo = Image.open(requests.get(logo_url, stream=True).raw)
+logo = Image.open("CDSlogo.png")
 with st.sidebar:
-    st.image(logo, width=200)
     st.markdown("""
     **AI and NLP-powered tool** for automated candidate ranking and filtering using 3 AI models: BERT, MPNet, and MiniLM.
 
@@ -47,6 +45,7 @@ with st.sidebar:
     """)
 
 # Main Title
+st.image(logo, width=200)
 st.title("Resume Screening System")
 
 # Tabbed layout for UI

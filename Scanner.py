@@ -33,15 +33,7 @@ def keyword_check(resume_text, keywords):
 st.set_page_config(page_title="Applicant Tracking System", layout="wide")
 
 # Add the logo to the sidebar
-logo = Image.open("adnic_logo.PNG")
-with st.sidebar:
-    st.image(logo, width=200)
-
-# Main Title
-st.title("Resume Screening System")
-
-# Sidebar for embedding options
-flag = 'HuggingFace-BERT'
+logo = Image.open("CDSlogo.png")
 with st.sidebar:
     st.markdown('**Select the embedding model to use**')
     flag = st.selectbox(
@@ -49,6 +41,10 @@ with st.sidebar:
         ['HuggingFace-BERT', 'Doc2Vec'],
         label_visibility="collapsed"
     )
+
+# Main Title
+st.image(logo, width=200)
+st.title("Resume Screening System")
 
 # Tabbed layout for UI
 tab1, tab2 = st.tabs(["**Home**", "**Results**"])

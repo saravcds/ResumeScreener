@@ -32,11 +32,12 @@ def keyword_check(resume_text, keywords):
 st.set_page_config(page_title="Applicant Tracking System", layout="wide")
 
 # Add the logo to the sidebar
-logo = Image.open("adnic_logo.PNG")
+logo = Image.open("CDSlogo.png")
 with st.sidebar:
     st.image(logo, width=200)
 
 # Main Title
+st.image(logo, width=200)
 st.title("Resume Screening System")
 
 # Sidebar for embedding options
