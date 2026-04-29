@@ -31,11 +31,12 @@ def keyword_check(resume_text, keywords):
     return len(matches) / len(keywords) * 100 if keywords else 0
 
 # Streamlit App
-st.set_page_config(page_title="Applicant Tracking System", layout="wide")
+st.set_page_config(page_title="Applicant Tracking System", layout="wide", initial_sidebar_state="expanded")
 
 # Add the logo and description to the sidebar
 logo = Image.open("CDSlogo.png")
 with st.sidebar:
+    st.image(logo, width=200)
     st.markdown("""
     **AI and NLP-powered tool** for automated candidate ranking and filtering using 3 AI models: BERT, MPNet, and MiniLM.
 
@@ -45,7 +46,6 @@ with st.sidebar:
     """)
 
 # Main Title
-st.image(logo, width=200)
 st.title("Resume Screening System")
 
 # Tabbed layout for UI

@@ -4,6 +4,9 @@ import pdfplumber
 from Resume_scanner import compare
 from PIL import Image
 
+st.set_page_config(page_title="Applicant Tracking System", layout="wide", initial_sidebar_state="expanded")
+st.markdown("""<style>div.block-container{padding-top:0rem;}</style>""", unsafe_allow_html=True)
+
 
 def extract_pdf_data(file_path):
     data = ""
@@ -38,6 +41,8 @@ if len(sys.argv) > 1:
 # Sidebar
 flag = 'HuggingFace-BERT'
 with st.sidebar:
+    logo = Image.open("CDSlogo.png")
+    st.image(logo, width=200)
     st.markdown('**Which embedding do you want to use**')
     options = st.selectbox('Which embedding do you want to use',
                            ['HuggingFace-BERT', 'Doc2Vec'],
@@ -49,8 +54,6 @@ tab1, tab2 = st.tabs(["**Home**", "**Results**"])
 
 # Tab Home
 with tab1:
-    logo = Image.open("CDSlogo.png")
-    st.image(logo, width=200)
     st.title("Applicant Tracking System")
     uploaded_files = st.file_uploader(
         '**Choose your resume.pdf file:** ', type="pdf", accept_multiple_files=True)
